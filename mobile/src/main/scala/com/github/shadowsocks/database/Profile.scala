@@ -35,10 +35,10 @@ class Profile {
   var id: Int = _
 
   @DatabaseField
-  var name: String = ""
+  var name: String = "untitled"
 
   @DatabaseField
-  var host: String = "198.199.101.152"
+  var host: String = "remote server address"
 
   // hopefully hashCode = mHandle doesn't change, currently this is true from KitKat to Nougat
   @DatabaseField
@@ -48,7 +48,7 @@ class Profile {
   var remotePort: Int = 8388
 
   @DatabaseField
-  var password: String = "u1rRWTssNv0p"
+  var password: String = "remote server password"
 
   @DatabaseField
   var method: String = "aes-256-cfb"
