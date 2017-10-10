@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
+  <!-- Material DEFAULT colors -->
+  <color name="material_drawer_primary">#E56155</color>
+  <color name="material_drawer_primary_dark">#C83D2C</color>
+  <color name="material_drawer_primary_light">#ECB0B7</color>
+  <color name="material_drawer_accent">#BED43D</color>
 
   <color name="material_green_700">#388E3C</color>
   <color name="material_green_a700">#00C853</color>
@@ -13,5 +18,10 @@
   <color name="material_primary_500">@color/material_blue_grey_500</color>
   <color name="material_primary_700">@color/material_blue_grey_700</color>
   <color name="material_accent_200">@color/material_green_a700</color>
+
+  <color name="hip_accent">#EBEC6E</color>
+  <color name="hip_primary">#E56155</color>
+  <color name="hip_primary_dark">#C83D2C</color>
+  <color name="hip_grey">#9B9B9B</color>
 
 </resources>

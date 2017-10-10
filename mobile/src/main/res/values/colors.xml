@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="ic_launcher_background">#7488A1</color>
+
+    	<!-- Material DEFAULT colors -->
+    <color name="material_drawer_primary">#E56155</color>
+    <color name="material_drawer_primary_dark">#C83D2C</color>
+    <color name="material_drawer_primary_light">#ECB0B7</color>
+    <color name="material_drawer_accent">#BED43D</color>
+
 </resources>

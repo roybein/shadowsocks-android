@@ -102,28 +102,28 @@ class MainActivity extends Activity with ServiceBoundContext with Drawer.OnDrawe
       ProfilesFragment.instance.onTrafficPersisted(profileId))
   }
 
-  private lazy val greyTint = ContextCompat.getColorStateList(MainActivity.this, R.color.material_primary_500)
-  private lazy val greenTint = ContextCompat.getColorStateList(MainActivity.this, R.color.material_green_700)
+  private lazy val greyTint = ContextCompat.getColorStateList(MainActivity.this, R.color.hip_grey)
+  private lazy val greenTint = ContextCompat.getColorStateList(MainActivity.this, R.color.hip_primary)
   private def hideCircle() = try fabProgressCircle.hide() catch {
     case _: NullPointerException =>
   }
   private def changeState(s: Int, profileName: String = null, m: String = null) {
     s match {
       case State.CONNECTING =>
-        fab.setImageResource(R.drawable.ic_start_busy)
+        fab.setImageResource(R.drawable.hip_unconnect)
         fabProgressCircle.show()
         statusText.setText(R.string.connecting)
       case State.CONNECTED =>
         if (state == State.CONNECTING) fabProgressCircle.beginFinalAnimation()
         else fabProgressCircle.postDelayed(hideCircle, 1000)
-        fab.setImageResource(R.drawable.ic_start_connected)
+        fab.setImageResource(R.drawable.hip_connect)
         statusText.setText(if (app.isNatEnabled) R.string.nat_connected else R.string.vpn_connected)
       case State.STOPPING =>
-        fab.setImageResource(R.drawable.ic_start_busy)
+        fab.setImageResource(R.drawable.hip_connect)
         if (state == State.CONNECTED) fabProgressCircle.show()  // ignore for stopped
         statusText.setText(R.string.stopping)
       case _ =>
-        fab.setImageResource(R.drawable.ic_start_idle)
+        fab.setImageResource(R.drawable.hip_unconnect)
         fabProgressCircle.postDelayed(hideCircle, 1000)
         if (m != null) {
           val snackbar = Snackbar.make(findViewById(R.id.snackbar),
