@@ -35,7 +35,8 @@ class AboutFragment extends ToolbarFragment {
     super.onViewCreated(view, savedInstanceState)
     toolbar.setTitle(getString(R.string.about_title).formatLocal(Locale.ENGLISH, BuildConfig.VERSION_NAME))
     val web = view.findViewById[WebView](R.id.web_view)
-    web.loadUrl("file:///android_asset/pages/about.html")
+    // web.loadUrl("file:///android_asset/pages/about.html")
+    web.loadUrl("https://hipovpn.com")
     web.setWebViewClient(new WebViewClient() {
       override def shouldOverrideUrlLoading(view: WebView, url: String): Boolean = {
         getActivity.asInstanceOf[MainActivity].launchUrl(url)

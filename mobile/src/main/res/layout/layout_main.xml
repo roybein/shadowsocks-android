@@ -16,7 +16,7 @@
                   android:paddingTop="16dip"
                   android:paddingBottom="16dip"
                   android:focusable="true"
-                  android:background="@drawable/background_stat"
+                  android:background="@color/material_primary_100"
                   android:orientation="vertical"
                   android:nextFocusRight="@+id/fab"
                   android:layout_above="@+id/snackbar">

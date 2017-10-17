@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<string name="app_name">"影梭"</string>
+<string name="app_name">"Hipo"</string>
 <string name="quick_toggle">"开关"</string>
 
 <!-- misc -->
@@ -73,7 +73,7 @@
 <string name="faq">"常见问题"</string>
 <string name="recovery">"重置"</string>
 <string name="about">"关于"</string>
-<string name="about_title">"影梭 (Shadowsocks) %s"</string>
+<string name="about_title">"Hipo %s"</string>
 <string name="edit">"编辑"</string>
 <string name="share">"分享"</string>
 <string name="add_profile">"添加配置文件"</string>
@@ -90,7 +90,7 @@
 <string name="delete">"删除"</string>
 <string name="delete_confirm_prompt">"您确定要删除此配置文件？"</string>
 <string name="share_qr_nfc">"二维码 / NFC"</string>
-<string name="add_profile_dialog">"为影梭添加此配置文件？"</string>
+<string name="add_profile_dialog">"为Hipo添加此配置文件？"</string>
 <string name="add_profile_methods_scan_qr_code">"扫描二维码"</string>
 <string name="add_profile_methods_manual_settings">"手动设置"</string>
 <plurals name="removed">

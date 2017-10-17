@@ -247,9 +247,9 @@ class MainActivity extends Activity with ServiceBoundContext with Drawer.OnDrawe
     } else drawer = drawerBuilder.build()
 
     val header = drawer.getHeader
-    val title = header.findViewById[TextView](R.id.drawer_title)
+    // val title = header.findViewById[TextView](R.id.drawer_title)
     val tf = Typefaces.get(this, "fonts/Iceland.ttf")
-    if (tf != null) title.setTypeface(tf)
+    // if (tf != null) title.setTypeface(tf)
 
     if (savedInstanceState == null) displayFragment(new ProfilesFragment)
     statusText = findViewById(R.id.status).asInstanceOf[TextView]
@@ -380,9 +380,9 @@ class MainActivity extends Activity with ServiceBoundContext with Drawer.OnDrawe
           handler.sendEmptyMessage(0)
         }
       case DRAWER_GLOBAL_SETTINGS => displayFragment(new GlobalSettingsFragment)
-      case DRAWER_ABOUT =>
-        app.track(TAG, "about")
-        displayFragment(new AboutFragment)
+      case DRAWER_ABOUT => launchUrl("https://hipovpn.com")
+        // app.track(TAG, "about")
+        // displayFragment(new AboutFragment)
       case DRAWER_FAQ => launchUrl(getString(R.string.faq_url))
       case DRAWER_CUSTOM_RULES => displayFragment(new CustomRulesFragment)
       case _ => // Ignore
