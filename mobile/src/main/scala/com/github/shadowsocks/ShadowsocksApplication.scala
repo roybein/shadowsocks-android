@@ -36,9 +36,9 @@ import com.github.shadowsocks.database.{DBHelper, Profile, ProfileManager}
 import com.github.shadowsocks.preference.OrmLitePreferenceDataStore
 import com.github.shadowsocks.utils.CloseUtils._
 import com.github.shadowsocks.utils._
-import com.google.android.gms.analytics.{GoogleAnalytics, HitBuilders, StandardExceptionParser, Tracker}
-import com.google.firebase.FirebaseApp
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+// import com.google.android.gms.analytics.{GoogleAnalytics, HitBuilders, StandardExceptionParser, Tracker}
+// import com.google.firebase.FirebaseApp
+// import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.j256.ormlite.logger.LocalLog
 import eu.chainfire.libsuperuser.Shell
 
@@ -60,8 +60,8 @@ object ShadowsocksApplication {
 class ShadowsocksApplication extends Application {
   import ShadowsocksApplication._
 
-  lazy val remoteConfig: FirebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
-  lazy val tracker: Tracker = GoogleAnalytics.getInstance(this).newTracker(R.xml.tracker)
+  // lazy val remoteConfig: FirebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
+  // lazy val tracker: Tracker = GoogleAnalytics.getInstance(this).newTracker(R.xml.tracker)
   private lazy val dbHelper = new DBHelper(this)
   lazy val profileManager = new ProfileManager(dbHelper)
   lazy val dataStore = new OrmLitePreferenceDataStore(dbHelper)
@@ -70,14 +70,17 @@ class ShadowsocksApplication extends Application {
   def isVpnEnabled: Boolean = !isNatEnabled
 
   // send event
-  def track(category: String, action: String): Unit = tracker.send(new HitBuilders.EventBuilder()
-    .setAction(action)
-    .setLabel(BuildConfig.VERSION_NAME)
-    .build())
-  def track(t: Throwable): Unit = tracker.send(new HitBuilders.ExceptionBuilder()
-    .setDescription(new StandardExceptionParser(this, null).getDescription(Thread.currentThread.getName, t))
-    .setFatal(false)
-    .build())
+  // def track(category: String, action: String): Unit = tracker.send(new HitBuilders.EventBuilder()
+  //   .setAction(action)
+  //   .setLabel(BuildConfig.VERSION_NAME)
+  //   .build())
+  // def track(t: Throwable): Unit = tracker.send(new HitBuilders.ExceptionBuilder()
+  //   .setDescription(new StandardExceptionParser(this, null).getDescription(Thread.currentThread.getName, t))
+  //   .setFatal(false)
+  //   .build())
+
+  def track(category: String, action: String): Unit = {}
+  def track(t: Throwable): Unit = {}
 
   def currentProfile: Option[Profile] = profileManager.getProfile(dataStore.profileId)
 
@@ -146,9 +149,9 @@ class ShadowsocksApplication extends Application {
     AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
     checkChineseLocale(getResources.getConfiguration)
 
-    FirebaseApp.initializeApp(this)
-    remoteConfig.setDefaults(R.xml.default_configs)
-    remoteConfig.fetch().addOnCompleteListener(task => if (task.isSuccessful) remoteConfig.activateFetched())
+    // FirebaseApp.initializeApp(this)
+    // remoteConfig.setDefaults(R.xml.default_configs)
+    // remoteConfig.fetch().addOnCompleteListener(task => if (task.isSuccessful) remoteConfig.activateFetched())
 
     JobManager.create(this).addJobCreator(DonaldTrump)
 

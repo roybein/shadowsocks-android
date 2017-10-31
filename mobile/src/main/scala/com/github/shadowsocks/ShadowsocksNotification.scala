@@ -61,6 +61,7 @@ class ShadowsocksNotification(private val service: BaseService, profileName: Str
     .setContentTitle(profileName)
     .setContentIntent(PendingIntent.getActivity(service, 0, new Intent(service, classOf[MainActivity])
       .setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT), 0))
+      .setSmallIcon(R.drawable.ic_stat_shadowsocks)
     // .setSmallIcon(R.drawable.hip_connect)
   if (Build.VERSION.SDK_INT < 24) builder.addAction(R.drawable.ic_navigation_close,
     service.getString(R.string.stop), PendingIntent.getBroadcast(service, 0, new Intent(Action.CLOSE), 0))
